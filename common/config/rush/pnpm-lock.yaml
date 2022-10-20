@@ -28,9 +28,6 @@ importers:
       eslint-config-next: 12.3.1_z4bbprzjrhnsfa24uvmcbu7f5q
       typescript: 4.8.4
 
-  ../../packages/backend:
-    specifiers: {}
-
   ../../packages/ecomm:
     specifiers:
       '@types/node': 18.11.2

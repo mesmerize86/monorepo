@@ -111,7 +111,15 @@
      */
     "useWorkspaces": true
   },
-
+  "commands": [
+    {
+      "name": "check-readme",
+      "commandKind": "bulk",
+      "summary": "Validates a project's README.md to make sure it conforms to company policy",
+      "shellCommand": "node <packageFolder>/lib/start.js",
+      "safeForSimultaneousRushProcesses": true
+    }
+  ]
   /**
    * Older releases of the Node.js engine may be missing features required by your system.
    * Other releases may have bugs.  In particular, the "latest" version will not be a
@@ -412,10 +420,6 @@
     {
       "packageName": "ecomm",
       "projectFolder": "packages/ecomm"
-    },
-    {
-      "packageName": "backend",
-      "projectFolder": "packages/backend"
     },
     {
       "packageName": "ui",
