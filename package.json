@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "kishormaharjan",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.2.0"
+  }
 }
