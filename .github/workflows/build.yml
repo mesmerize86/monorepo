@@ -48,6 +48,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
+          cache-dependency-path: ${{ github.workspace }}/packages/ecomm
       - name: Install pnpm
         run: npm i pnpm@latest -g
       - name: Install Dependencies
