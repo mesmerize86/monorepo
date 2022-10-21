@@ -4,7 +4,7 @@ on:
     branches:
       - master
     path:
-      - 'monorepo'
+      - 'monorepo/**'
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -21,4 +21,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          projectBaseDir: /packages/admin
+          projectBaseDir: './packages/admin'
