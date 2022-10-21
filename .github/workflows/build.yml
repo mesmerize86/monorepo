@@ -67,3 +67,8 @@ jobs:
           args: >
             -Dsonar.organization=mesmerize86
             -Dsonar.projectKey=mesmerize86_ecomm
+            -Dsonar.sources=.
+            -Dsonar.javascript.lcov.reportPaths= TestResults/report-lcov/lcov.info
+            -Dsonar.junit.reportsPath= TestResults/report-junit/unit-tests-results.xml
+            -Dsonar.log.level=DEBUG
+            -Dsonar.verbose=true
