@@ -33,6 +33,9 @@ jobs:
     strategy:
       matrix:
         node-version: [ 16.x ]
+    defaults:
+      run:
+        working-directory: ./packages/ecomm
     steps:
       - uses: actions/checkout@v3
         with:
@@ -45,15 +48,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
-          cache-dependency-path: ${{ github.workspace }}/packages/ecomm
       - name: Install pnpm
         run: npm i pnpm@latest -g
       - name: Install Dependencies
         run: pnpm install
-      - name: Linting
+      - name: pnpm Lint
         run: pnpm lint
-      - name: Unit Test
-        run: pnpm test
       - name: SonarCloud Ecom
         uses: SonarSource/sonarcloud-github-action@master
         env:
