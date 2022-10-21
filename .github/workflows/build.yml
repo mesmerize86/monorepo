@@ -70,3 +70,4 @@ jobs:
             -Dsonar.sources=.
             -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
             -Dsonar.junit.reportsPath=./unit-tests-results.xml
+            -Dsonar.exclusions=pages/**/*.test.tsx
