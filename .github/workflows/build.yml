@@ -22,3 +22,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           projectBaseDir: ${{ github.workspace }}/packages/admin
+          args: >
+            -Dsonar.organization=mesmerize86
+            -Dsonar.projectKey=mesmerize86_admin
