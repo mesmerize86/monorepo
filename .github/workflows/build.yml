@@ -11,21 +11,12 @@ jobs:
   sonarcloudAdmin:
     name: SonarCloud Admin
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [ 16.x ]
     steps:
-      - uses: pnpm/action-setup@v2.0.1
+      - uses: actions/checkout@v3
         with:
-          version: 7.13.6
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-         node-version: ${{ matrix.node-version }}
-         cache: 'pnpm'
-         cache-dependency-path: ${{ github.workspace }}/packages/admin
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Install dependencies
-        run: pnpm install
+        run: yarn
       - name: SonarCloud Admin
         uses: SonarSource/sonarcloud-github-action@master
         env:
