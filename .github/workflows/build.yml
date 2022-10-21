@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master
+    path:
+      - 'monorepo'
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
