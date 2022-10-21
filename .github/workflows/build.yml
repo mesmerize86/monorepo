@@ -8,34 +8,55 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  sonarcloudAdmin:
-    name: SonarCloud Admin
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Install dependencies
-        run: yarn
-      - name: SonarCloud Admin
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          projectBaseDir: ${{ github.workspace }}/packages/admin
-          args: >
-            -Dsonar.organization=mesmerize86
-            -Dsonar.projectKey=mesmerize86_admin
+#  sonarcloudAdmin:
+#    name: SonarCloud Admin
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v3
+#        with:
+#          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+#      - name: Install dependencies
+#        run: yarn
+#      - name: SonarCloud Admin
+#        uses: SonarSource/sonarcloud-github-action@master
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#        with:
+#          projectBaseDir: ${{ github.workspace }}/packages/admin
+#          args: >
+#            -Dsonar.organization=mesmerize86
+#            -Dsonar.projectKey=mesmerize86_admin
   sonarcloudEcomm:
-    name: SonarCloud Ecom
+    name: SonarCloud Ecomm
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 16.x ]
+    defaults:
+      run:
+        working-directory: ./packages/ecomm
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Install dependencies
-        run: yarn
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 7.13.6
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+          cache-dependency-path: ${{ github.workspace }}/packages/ecomm
+      - name: Install pnpm
+        run: npm i pnpm@latest -g
+      - name: Install Dependencies
+        run: pnpm install
+      - name: Lint
+        run: pnpm lint
+      - name: Unit Test
+        run: pnpm coverage
       - name: SonarCloud Ecom
         uses: SonarSource/sonarcloud-github-action@master
         env:
@@ -46,3 +67,6 @@ jobs:
           args: >
             -Dsonar.organization=mesmerize86
             -Dsonar.projectKey=mesmerize86_ecomm
+            -Dsonar.sources=.
+            -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
+            -Dsonar.junit.reportsPath=./unit-tests-results.xml

@@ -1,9 +1,10 @@
 import React from 'react';
 
-export const Test = () => {
+export const Home = () => {
     return (
         <div>
-            <h1>Hello Test</h1>
+            <h1>Welcome to next js</h1>
         </div>
     );
 };
+
