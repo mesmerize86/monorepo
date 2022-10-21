@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --coverage"
+    "coverage": "jest --coverage --watchall --collectCoverageFrom='packages/ecomm/pages/**/*.{ts, tsx}' --collectCoverageFrom='!packages/ecomm/pagers/**/*.{types, stories, test, spec, constants}.{ts, tsx}'"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

@@ -56,7 +56,7 @@ jobs:
       - name: Lint
         run: pnpm lint
       - name: Unit Test
-        run: pnpm test
+        run: pnpm coverage
       - name: SonarCloud Ecom
         uses: SonarSource/sonarcloud-github-action@master
         env:
