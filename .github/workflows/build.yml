@@ -53,8 +53,10 @@ jobs:
         run: npm i pnpm@latest -g
       - name: Install Dependencies
         run: pnpm install
-      - name: pnpm Lint
+      - name: Lint
         run: pnpm lint
+      - name: Unit Test
+        run: pnpm test
       - name: SonarCloud Ecom
         uses: SonarSource/sonarcloud-github-action@master
         env:
