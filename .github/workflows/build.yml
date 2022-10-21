@@ -4,7 +4,7 @@ on:
     branches:
       - master
     path:
-      - ${{ github.workspace }}/packages/admin
+      - 'monorepo/**'
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
