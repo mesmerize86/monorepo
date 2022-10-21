@@ -20,6 +20,7 @@ const customJestConfig = {
         '!pages/**/*.test.{ts, tsx}',
         '!pages/_app.tsx',
         '!pages/index.tsx',
+        '!jest.config.js',
     ],
     collectCoverage: true,
     coverageThreshold: {
