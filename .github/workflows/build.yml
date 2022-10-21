@@ -70,4 +70,4 @@ jobs:
             -Dsonar.sources=${{ github.workspace }}/packages/ecomm
             -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
             -Dsonar.junit.reportsPath=./unit-tests-results.xml
-            -Dsonar.exclusions=${{ github.workspace }}/packages/ecomm/pages/**/*.test.tsx
+            -Dsonar.exclusions=pages/**/*.test.tsx
