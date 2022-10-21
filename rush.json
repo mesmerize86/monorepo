@@ -173,8 +173,8 @@
    * To remove these restrictions, you could set projectFolderMinDepth=1
    * and set projectFolderMaxDepth to a large number.
    */
-  // "projectFolderMinDepth": 2,
-  // "projectFolderMaxDepth": 2,
+//   "projectFolderMinDepth": 2,
+   "projectFolderMaxDepth": 3,
 
   /**
    * Today the npmjs.com registry enforces fairly strict naming rules for packages, but in the early
@@ -415,6 +415,10 @@
     {
       "packageName": "ui",
       "projectFolder": "packages/ui"
+    },
+    {
+      "packageName": "@shared/api",
+      "projectFolder": "packages/shared/api"
     },
     // {
     //   /**
