@@ -30,6 +30,7 @@ importers:
 
   ../../packages/ecomm:
     specifiers:
+      '@shared/api': workspace:*
       '@testing-library/jest-dom': ^5.16.5
       '@testing-library/react': ^13.4.0
       '@types/node': 18.11.2
@@ -45,6 +46,7 @@ importers:
       react-dom: 18.2.0
       typescript: 4.8.4
     dependencies:
+      '@shared/api': link:../shared/api
       '@testing-library/jest-dom': 5.16.5
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
       eslint-plugin-testing-library: 5.9.0_z4bbprzjrhnsfa24uvmcbu7f5q
@@ -60,6 +62,9 @@ importers:
       eslint: 8.25.0
       eslint-config-next: 12.3.1_z4bbprzjrhnsfa24uvmcbu7f5q
       typescript: 4.8.4
+
+  ../../packages/shared/api:
+    specifiers: {}
 
   ../../packages/ui:
     specifiers: {}
