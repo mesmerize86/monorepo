@@ -10,6 +10,11 @@
   "author": "kishormaharjan",
   "license": "ISC",
   "devDependencies": {
-    "@types/jest": "^29.2.0"
+    "@types/jest": "^29.2.0",
+    "@types/mocha": "^10.0.0"
+  },
+  "dependencies": {
+    "jest": "^29.2.1",
+    "mocha": "^10.1.0"
   }
 }
