@@ -9,8 +9,9 @@ on:
     types: [opened, synchronize, reopened]
 jobs:
   InstallNPM:
-    - name: Install dependencies
-      run: yarn
+    steps:
+      - name: Install dependencies
+        run: yarn
   sonarcloudAdmin:
     name: SonarCloud Admin
     runs-on: ubuntu-latest
