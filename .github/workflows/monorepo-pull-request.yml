@@ -1,4 +1,4 @@
-name: Monorepo
+name: Monorepo Pull Request
 on:
   push:
     branches:
