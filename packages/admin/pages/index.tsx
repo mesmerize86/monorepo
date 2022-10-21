@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          This is admin
+          This is admin. Admin
         </h1>
       </main>
 
