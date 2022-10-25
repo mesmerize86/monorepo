@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           This is Ecomm. test
         </h1>
-
+        <img src='test.jpg' />
 
       </main>
 
