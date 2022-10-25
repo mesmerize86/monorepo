@@ -11,6 +11,12 @@ const Home: NextPage = () => {
     sum(a, 5)
     const test = '';
 
+    const arr = [4, 3, 2, 1];
+
+    for (let value of arr) {
+        console.log(value);
+    }
+
   return (
     <div className={styles.container}>
       <Head>
