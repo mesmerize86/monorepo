@@ -4,6 +4,11 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
+    const sum = (a: number, b: number)=> {
+        return a + b;
+    }
+
+    sum('a', 5)
   return (
     <div className={styles.container}>
       <Head>
