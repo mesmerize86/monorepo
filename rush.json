@@ -419,6 +419,10 @@
       "packageName": "@shared/api",
       "projectFolder": "packages/shared/api"
     },
+    {
+      "packageName": "@mesmerize86/ui",
+      "projectFolder": "packages/ui/packages"
+    },
     // {
     //   /**
     //    * The NPM package name of the project (must match package.json)
