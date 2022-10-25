@@ -8,7 +8,9 @@ const Home: NextPage = () => {
         return a + b;
     }
 
-    sum('a', 5)
+    sum(a, 5)
+    const test = '';
+
   return (
     <div className={styles.container}>
       <Head>
