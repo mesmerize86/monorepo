@@ -4,7 +4,18 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
-    console.log('admin');
+    const sum = (a: number, b: number)=> {
+        return a + b;
+    }
+
+    sum(a, 5)
+    const test = '';
+
+    const arr = [4, 3, 2, 1];
+
+    for (let value of arr) {
+        console.log(value);
+    }
   return (
     <div className={styles.container}>
       <Head>
