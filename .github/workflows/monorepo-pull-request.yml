@@ -47,10 +47,11 @@ jobs:
         with:
           node-version: ${{matrix.node-version}}
       - name: Install dependencies
-        run:
-          node common/scripts/install/run-rush.js change -v
-          node common/scripts/install/run-rush.js install
-          node common/scripts/install/run-rush.js build
+        run: node common/scripts/install/run-rush.js change -v
+      - name: Install install
+        run: node common/scripts/install/run-rush.js install
+      - name: Install build
+        run: node common/scripts/install/run-rush.js build
       - name: lint code
           node common/scripts/install/run-rush.js lint
       - name: SonarCloud Ecom
