@@ -4,7 +4,7 @@ on:
     branches:
       - master
     path:
-      - 'monorepo/**'
+      - 'monorepo/packages/ecomm'
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
