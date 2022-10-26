@@ -4,6 +4,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
+    const test: '';
   return (
     <div className={styles.container}>
       <Head>
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           This is admin. Admin
         </h1>
+          <img src="asd" />
       </main>
 
       <footer className={styles.footer}>
