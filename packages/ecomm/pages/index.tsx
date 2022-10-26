@@ -4,6 +4,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
+    const test = '';
   return (
     <div className={styles.container}>
       <Head>
@@ -17,7 +18,7 @@ const Home: NextPage = () => {
           This is Ecomm. test
         </h1>
 
-
+          <img src="asd" />
       </main>
 
       <footer className={styles.footer}>
