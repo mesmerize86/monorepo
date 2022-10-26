@@ -2,7 +2,7 @@ name: My Test Monorepo Project
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - 'monorepo/packages/ecomm'
   pull_request:
