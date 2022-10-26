@@ -44,13 +44,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{matrix.node-version}}
-      - name: Install dependencies
-        run: |
-          node common/scripts/install/run-rush.js change -v
-          node common/scripts/install/run-rush.js install
-          node common/scripts/install/run-rush.js build
-      - name: lint code
-        run: node common/scripts/install/run-rush.js lint
       - name: SonarCloud Ecom
         uses: SonarSource/sonarcloud-github-action@master
         env:
