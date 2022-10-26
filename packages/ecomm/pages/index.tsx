@@ -27,7 +27,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          This is Ecomm. test
+          This is Ecomm
         </h1>
         <img src='test.jpg' />
 
