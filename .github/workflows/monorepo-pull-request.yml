@@ -33,8 +33,6 @@ jobs:
     strategy:
       matrix:
         node-version: [ 16.x ]
-    env:
-      CI: true
     defaults:
       run:
         working-directory: ./packages/ecomm
