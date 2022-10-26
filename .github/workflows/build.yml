@@ -21,8 +21,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          projectBaseDir: ${{ github.workspace }}/packages/ecomm
-
+          projectBaseDir: ${{ github.workspace }}/packages/admin
+        args: >
+            -Dsonar.projectKey=mesmerize86_admin
+            -Dsonar.organization=mesmerize86
 
 #  sonarcloudScan2:
 #    name: SonarCloudScan2
