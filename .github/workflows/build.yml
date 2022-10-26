@@ -23,8 +23,8 @@ jobs:
         with:
           projectBaseDir: ${{ github.workspace }}/packages/admin
         args: >
-            -Dsonar.projectKey=mesmerize86_admin
-            -Dsonar.organization=mesmerize86
+            -sonar.projectKey=mesmerize86_admin
+            -sonar.organization=mesmerize86
 
 #  sonarcloudScan2:
 #    name: SonarCloudScan2
