@@ -53,7 +53,7 @@ jobs:
       - name: Install build
         run: node common/scripts/install/run-rush.js build
       - name: lint code
-          node common/scripts/install/run-rush.js lint
+        run: node common/scripts/install/run-rush.js lint
       - name: SonarCloud Ecom
         uses: SonarSource/sonarcloud-github-action@master
         env:
