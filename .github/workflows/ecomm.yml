@@ -28,7 +28,7 @@ jobs:
 
       - name: Run linters
         working-directory: packages/ecomm
-        run:  yarn add -g eslint
+        run:  yarn add eslint
 
       - name: Run linters
         uses: wearerequired/lint-action@v2
