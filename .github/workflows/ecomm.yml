@@ -24,9 +24,8 @@ jobs:
 
       - name: Install Dependencies
         working-directory: packages/ecomm
-        run: yarn install
+        run: npm ci
 
-      # ESLint and Prettier must be in `package.json`
       - name: Run linters
         uses: wearerequired/lint-action@v2
         with:
