@@ -1,15 +1,36 @@
 {
   "root": true,
-  "extends": ["next/core-web-vitals"],
-  "plugins": ["testing-library"],
+  "ignorePatterns": ["**/*.d.ts"],
   "overrides": [
-    // Only uses Testing Library lint rules in test files
     {
-      "files": [
-        "**/__tests__/**/*.[jt]s?(x)",
-        "**/?(*.)+(spec|test).[jt]s?(x)"
-      ],
-      "extends": ["plugin:testing-library/react"]
+      "files": "**/*.+(ts|tsx)",
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint", "react-native"],
+      "extends": [
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:react-hooks/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+      ]
+    },
+    {
+      "files": "**/*.+(js|jsx)",
+      "env": {
+        "commonjs": true,
+        "es6": true,
+        "node": true
+      },
+      "parserOptions": {
+        "ecmaVersion": 2018
+      },
+      "extends": ["eslint:recommended", "prettier"]
     }
-  ]
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }
