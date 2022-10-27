@@ -34,8 +34,9 @@ jobs:
         uses: wearerequired/lint-action@v2
         with:
           eslint: true
-          prettier: true
           eslint_dir: packages/ecomm
+          prettier: true
+          prettier_dir: packages/ecomm
 
       - name: Test
         working-directory: packages/ecomm
