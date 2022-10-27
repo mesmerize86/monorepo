@@ -26,11 +26,6 @@ jobs:
         working-directory: packages/ecomm
         run: yarn install
 
-#      - name: Run linters
-#        working-directory: packages/ecomm
-#        run:  yarn add eslint
-
-      - name: run linters
       - uses: reviewdog/action-eslint@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
