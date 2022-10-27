@@ -4,6 +4,8 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
+    const test = '';
+
   return (
     <div className={styles.container}>
       <Head>
@@ -18,6 +20,7 @@ const Home: NextPage = () => {
         </h1>
       </main>
 
+        <img src="asdf" />
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
