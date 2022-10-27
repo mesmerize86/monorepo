@@ -24,6 +24,12 @@ jobs:
         working-directory: packages/ecomm
         run: yarn install
 
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          eslint: true
+          prettier: true
+
       - name: Test
         working-directory: packages/ecomm
         run: yarn run coverage
