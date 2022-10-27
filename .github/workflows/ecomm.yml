@@ -35,6 +35,7 @@ jobs:
         with:
           eslint: true
           prettier: true
+          path: packages/ecomm
 
       - name: Test
         working-directory: packages/ecomm
