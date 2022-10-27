@@ -15,13 +15,13 @@ jobs:
   sonarcloudScan1:
     name: SonarCloudScan1
     runs-on: ubuntu-latest
-    working-directory: packages/ecomm
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
       - name: Install Dependencies
+        working-directory: packages/ecomm
         run: yarn install
 
       - name: Run linters
@@ -29,8 +29,10 @@ jobs:
         with:
           eslint: true
           prettier: true
+        working-directory: packages/ecomm
 
       - name: Test
+        working-directory: packages/ecomm
         run: yarn run coverage
 
       - name: SonarCloud Scan
