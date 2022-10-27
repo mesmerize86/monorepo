@@ -27,6 +27,7 @@ jobs:
         run: yarn install
 
       - uses: reviewdog/action-eslint@v1
+        working-directory: packages/ecomm
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review # Change reporter.
