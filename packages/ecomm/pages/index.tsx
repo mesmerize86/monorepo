@@ -13,6 +13,8 @@ const Home: NextPage = () => {
     }
 
     foo();
+
+
   return (
     <div className={styles.container}>
       <Head>
