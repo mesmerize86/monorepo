@@ -25,6 +25,7 @@ jobs:
         run: yarn install
 
       - name: Run linters
+        working-directory: packages/ecomm
         uses: wearerequired/lint-action@v2
         with:
           eslint: true
