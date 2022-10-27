@@ -27,10 +27,7 @@ jobs:
         run: yarn install
 
       - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          prettier: true
+        run:  eslint . --ext .js,.jsx,.ts,.tsx
 
       - name: Test
         working-directory: packages/ecomm
