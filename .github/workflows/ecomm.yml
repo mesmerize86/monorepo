@@ -26,9 +26,15 @@ jobs:
         working-directory: packages/ecomm
         run: yarn install
 
+#      - name: Run linters
+#        working-directory: packages/ecomm
+#        run:  yarn run eslint . --ext .js,.jsx,.ts,.tsx
+
       - name: Run linters
-        working-directory: packages/ecomm
-        run:  yarn run eslint . --ext .js,.jsx,.ts,.tsx
+        uses: wearerequired/lint-action@v2
+        with:
+          eslint: true
+          prettier: true
 
       - name: Test
         working-directory: packages/ecomm
