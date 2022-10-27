@@ -24,6 +24,10 @@ jobs:
         working-directory: packages/ecomm
         run: yarn install
 
+      - name: Install Eslint
+        working-directory: packages/ecomm
+        run: yarn install eslint
+
       - name: Run linters
         uses: wearerequired/lint-action@v2
         with:
