@@ -26,12 +26,9 @@ jobs:
         working-directory: packages/ecomm
         run: yarn install
 
-      - uses: reviewdog/action-eslint@v1
-        working-directory: packages/ecomm
+      - uses: stefanoeb/eslint-action@1.0.2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-pr-review # Change reporter.
-          eslint_flags: 'packages/ecomm/'
+          files: packages/ecomm
 
       - name: Test
         working-directory: packages/ecomm
