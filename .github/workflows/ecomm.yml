@@ -28,7 +28,7 @@ jobs:
 
       - name: Run linters
         working-directory: packages/ecomm
-        uses: yarn lint
+        run: yarn lint
 
       - name: Test
         working-directory: packages/ecomm
