@@ -29,7 +29,6 @@ jobs:
         with:
           eslint: true
           prettier: true
-        working-directory: packages/ecomm
 
       - name: Test
         working-directory: packages/ecomm
