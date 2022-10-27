@@ -1,4 +1,4 @@
-name: Admin SonarCloud
+name: Ecomm SonarCloud
 on:
   push:
     paths:
