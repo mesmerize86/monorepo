@@ -26,15 +26,16 @@ jobs:
         working-directory: packages/ecomm
         run: yarn install
 
-      - name: Run linters
-        working-directory: packages/ecomm
-        run:  yarn add eslint
+#      - name: Run linters
+#        working-directory: packages/ecomm
+#        run:  yarn add eslint
 
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
+      - name: run linters
+      - uses: reviewdog/action-eslint@v1
         with:
-          eslint: true
-          prettier: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review # Change reporter.
+          eslint_flags: 'src/'
 
       - name: Test
         working-directory: packages/ecomm
