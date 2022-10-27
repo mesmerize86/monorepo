@@ -27,6 +27,7 @@ jobs:
         run: yarn install
 
       - name: Run linters
+        working-directory: packages/ecomm
         run:  yarn run eslint . --ext .js,.jsx,.ts,.tsx
 
       - name: Test
