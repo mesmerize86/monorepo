@@ -8,7 +8,12 @@
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended"
     ],
-    "overrides": [
+    "overrides": [{
+        "ignorePatterns": ["**/*.js"],
+        "rules": {
+            "quotes": [ 2, "single" ]
+        }
+    }
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
