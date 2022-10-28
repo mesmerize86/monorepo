@@ -8,13 +8,8 @@
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended"
     ],
-    "overrides": [{
-        "ignorePatterns": ["next.config.js", "jest.config.js", "jest.setup.js"],
-        "rules": {
-            "quotes": [ 2, "single" ]
-        }
-    }
-    ],
+    "overrides": [],
+    eslintIgnore: ["next.config.js", "jest.config.js", "jest.setup.js"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": "latest",
