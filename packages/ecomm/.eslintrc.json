@@ -9,7 +9,7 @@
         "plugin:@typescript-eslint/recommended"
     ],
     "overrides": [{
-        "ignorePatterns": ["**/*.js"],
+        "ignorePatterns": ["next.config.js", "jest.config.js", "jest.setup.js"],
         "rules": {
             "quotes": [ 2, "single" ]
         }
