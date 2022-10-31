@@ -31,9 +31,10 @@ jobs:
 #        working-directory: packages/ecomm
 #        run: yarn lint
 
-      - name: Lint Action
-        uses: wearerequired/lint-action@v2.1.0
+      - name: Run linters
+        uses: samuelmeuli/lint-action@v1
         with:
+          github_token: ${{ secrets.github_token }}
           eslint: true
           eslint_dir: packages/ecomm/pages
           prettier: true
