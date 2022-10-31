@@ -5,6 +5,20 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
+    const test = '';
+    const test = 'abc';
+
+    const hasDiscount= (order: any) => {
+        let basePrice = order.basePrice();
+        return basePrice > 1000;
+    }
+    const newOrder = {
+        basePrice: ()=> 200
+    }
+
+    hasDiscount(newOrder)
+
+
   return (
     <div className={styles.container}>
       <Head>

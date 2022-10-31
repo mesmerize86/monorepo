@@ -18,26 +18,26 @@ jobs:
   sonarcloudScan1:
     name: SonarCloudScan1
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 16.x ]
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
       - name: Install Dependencies
         working-directory: packages/ecomm
         run: yarn install
 
-#      - name: Run linters
-#        working-directory: packages/ecomm
-#        run:  yarn add -g eslint
-
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          eslint_dir: packages/ecomm
-          prettier: true
-          prettier_dir: packages/ecomm
+      - name: Run lint
+        working-directory: packages/ecomm
+        run: yarn lint
 
       - name: Test
         working-directory: packages/ecomm
