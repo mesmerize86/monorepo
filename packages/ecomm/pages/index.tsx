@@ -1,20 +1,10 @@
+import React from 'react';
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
-    const test = '';
-    function foo(a) {
-        let b = 12;
-        if (a) {
-            return b;
-        }
-    }
-
-    foo();
-
-
   return (
     <div className={styles.container}>
       <Head>

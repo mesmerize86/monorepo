@@ -11,6 +11,9 @@ on:
         - 'packages/ecomm/**'
         - '.github/workflows/**'
     types: [opened, synchronize, reopened]
+permissions:
+  contents: read
+  checks:   write
 jobs:
   sonarcloudScan1:
     name: SonarCloudScan1
@@ -23,6 +26,18 @@ jobs:
       - name: Install Dependencies
         working-directory: packages/ecomm
         run: yarn install
+
+#      - name: Run linters
+#        working-directory: packages/ecomm
+#        run:  yarn add -g eslint
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          eslint: true
+          eslint_dir: packages/ecomm
+          prettier: true
+          prettier_dir: packages/ecomm
 
       - name: Test
         working-directory: packages/ecomm

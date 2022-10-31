@@ -15,7 +15,8 @@
     "incremental": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["jest","nodes"]
+    "types": ["jest","nodes", "@testing-library/jest-dom"],
+    "noImplicitAny": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
