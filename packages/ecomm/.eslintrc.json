@@ -14,6 +14,7 @@
                 },
                 "ecmaVersion": 6,
                 "sourceType": "module",
+                "allowImportExportEverywhere": true,
                 "project": ["./tsconfig.json"]
             },
             "extends": [
