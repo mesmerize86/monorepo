@@ -3,30 +3,29 @@
         "browser": true,
         "es2021": true
     },
-    "overrides": [
-        {
-            "files": "**/*.(ts|tsx)",
-            "parser": "@typescript-eslint/parser",
-            "plugins": ["@typescript-eslint"],
-            "parserOptions": {
-                "project": ["./tsconfig.json"]
-            },
-            "extends": [
-                "eslint:recommended",
-                "plugin:react/recommended",
-                "plugin:react/jsx-runtime",
-                "plugin:react-hooks/recommended",
-                "plugin:@typescript-eslint/eslint-recommended",
-                "plugin:@typescript-eslint/recommended",
-                "prettier",
-                "next/core-web-vitals",
-            ],
-            "rules": {
-                "react/react-in-jsx-scope": "off",
-                "@typescript-eslint/no-unused-vars": "error",
-                "@typescript-eslint/consistent-type-definitions": ["error", "type"]
-            }
+    "overrides": [{
+        "files": "**/*.(ts|tsx)",
+        "parser": "@typescript-eslint/parser",
+        "plugins": ["@typescript-eslint"],
+        "parserOptions": {
+            "project": ["./tsconfig.json"]
         },
+        "extends": [
+            "eslint:recommended",
+            "plugin:react/recommended",
+            "plugin:react/jsx-runtime",
+            "plugin:react-hooks/recommended",
+            "plugin:@typescript-eslint/eslint-recommended",
+            "plugin:@typescript-eslint/recommended",
+            "prettier",
+            "next/core-web-vitals"
+        ],
+        "rules": {
+            "react/react-in-jsx-scope": "off",
+            "@typescript-eslint/no-unused-vars": "error",
+            "@typescript-eslint/consistent-type-definitions": ["error", "type"]
+        }
+    },
         {
             "files": "**/*.+(js|jsx)",
             "env": {
