@@ -35,9 +35,9 @@ jobs:
         working-directory: packages/ecomm
         run: yarn install
 
-#      - name: Run lint
-#        working-directory: packages/ecomm
-#        run: yarn lint
+      - name: Run lint
+        working-directory: packages/ecomm
+        run: yarn lint
 
       - name: Test
         working-directory: packages/ecomm
