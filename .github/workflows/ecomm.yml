@@ -31,9 +31,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-#      - name: Install Dependencies
-#        working-directory: packages/ecomm
-#        run: yarn install
+      - name: Install Dependencies
+        working-directory: packages/ecomm
+        run: yarn install
 
       - name: Run lint
         working-directory: packages/ecomm
