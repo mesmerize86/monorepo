@@ -42,5 +42,5 @@
             ]
         }
     ],
-    "ignorePatterns": ["jest.config.js", "next.config.js"],
+    "ignorePatterns": ["jest.config.js", "next.config.js"]
 }
