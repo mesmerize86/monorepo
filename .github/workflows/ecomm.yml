@@ -27,17 +27,17 @@ jobs:
         working-directory: packages/ecomm
         run: yarn install
 
-      - name: Run linters
-        working-directory: packages/ecomm
-        run: yarn lint
-
 #      - name: Run linters
-#        uses: wearerequired/lint-action@v2
-#        with:
-#          eslint: true
-#          eslint_dir: packages/ecomm
-#          prettier: true
-#          prettier_dir: packages/ecomm
+#        working-directory: packages/ecomm
+#        run: yarn lint
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          eslint: true
+          eslint_dir: packages/ecomm/pages
+          prettier: true
+          prettier_dir: packages/ecomm/pages
 
       - name: Test
         working-directory: packages/ecomm
