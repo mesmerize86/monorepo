@@ -31,8 +31,8 @@ jobs:
 #        working-directory: packages/ecomm
 #        run: yarn lint
 
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
+      - name: Lint Action
+        uses: wearerequired/lint-action@v2.1.0
         with:
           eslint: true
           eslint_dir: packages/ecomm/pages
