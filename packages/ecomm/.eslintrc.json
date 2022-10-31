@@ -3,23 +3,26 @@
         "browser": true,
         "es2021": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
-    ],
-    "overrides": [
-    ],
     "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "tsConfigRootDir": './',
-        "project": ['./packages/ecomm/tsconfig.json'],
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
+
     "plugins": [
         "react",
         "@typescript-eslint"
+    ],
+    extends: ['eslint:recommended'],
+    "overrides": [
+        {
+            files: ['*.ts', '*.tsx'],
+            "extends": [
+                "plugin:react/recommended",
+                "plugin:@typescript-eslint/recommended",
+            ],
+            "parserOptions": {
+                "project": ['./packages/ecomm/tsconfig.json'],
+                "ecmaVersion": "latest",
+                "sourceType": "module"
+            }
+        }
     ],
     "ignorePatterns": ["jest.config.js", "next.config.js"],
     "rules": {
