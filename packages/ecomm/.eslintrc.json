@@ -8,12 +8,29 @@
     ],
     "overrides": [
         {
-            files: ['*.ts', '*.tsx'],
-            extends: ['plugin:@typescript-eslint/recommended', 'plugin:@typescript-eslint/recommended-requiring-type-checking'],
-            parserOptions: {
-                project: ['./tsconfig.json'], // Specify it only for TypeScript files
-            }
-        }
+            "files": "**/*.+(ts|tsx)",
+            "parser": "@typescript-eslint/parser",
+            "plugins": ["@typescript-eslint", "react-native"],
+            "extends": [
+                "plugin:react/recommended",
+                "plugin:react/jsx-runtime",
+                "plugin:react-hooks/recommended",
+                "plugin:@typescript-eslint/eslint-recommended",
+                "plugin:@typescript-eslint/recommended",
+                "prettier"
+            ]
+        },
+        {
+            "files": "**/*.+(js|jsx)",
+            "env": {
+                "commonjs": true,
+                "es6": true,
+                "node": true
+            },
+            "parserOptions": {
+                "ecmaVersion": 2018
+            },
+            "extends": ["eslint:recommended", "prettier"]
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
