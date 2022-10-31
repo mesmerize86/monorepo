@@ -3,6 +3,7 @@
         "browser": true,
         "es2021": true
     },
+    "extends": "next/core-web-vitals",
     "overrides": [
         {
             "files": "**/*.(ts|tsx)",
