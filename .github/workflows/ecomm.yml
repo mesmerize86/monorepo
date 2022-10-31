@@ -36,9 +36,7 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
           eslint: true
-          eslint_dir: packages/ecomm/pages
-          prettier: true
-          prettier_dir: packages/ecomm/pages
+          eslint_dir: packages/ecomm
 
       - name: Test
         working-directory: packages/ecomm
