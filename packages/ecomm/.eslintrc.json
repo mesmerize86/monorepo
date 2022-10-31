@@ -6,9 +6,12 @@
 
     "overrides": [
         {
-            "files": ["**/*.ts", "**/*.tsx)"],
+            "files": "**/*.(ts|tsx)",
             "parser": "@typescript-eslint/parser",
             "plugins": ["@typescript-eslint"],
+            parserOptions: {
+                project: ['./tsconfig.json'], // Specify it only for TypeScript files
+            },
             "extends": [
                 "eslint:recommended",
                 "plugin:react/recommended",
@@ -41,5 +44,5 @@
             ]
         }
     ],
-    "ignorePatterns": ["jest.config.js", "next.config.js"]
+    "ignorePatterns": ["jest.config.js", "next.config.js"],
 }
