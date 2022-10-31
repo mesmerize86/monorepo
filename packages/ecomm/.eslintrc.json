@@ -9,6 +9,9 @@
             "parser": "@typescript-eslint/parser",
             "plugins": ["@typescript-eslint"],
             "parserOptions": {
+                "ecmaFeatures": {
+                    "modules": true
+                },
                 "sourceType": "module",
                 "project": ["./tsconfig.json"]
             },
