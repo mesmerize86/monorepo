@@ -35,16 +35,16 @@ jobs:
         working-directory: packages/ecomm
         run: yarn install
 
-      - name: Run linters
-        working-directory: packages/ecomm
-        run: yarn lint
-
 #      - name: Run linters
-#        uses: samuelmeuli/lint-action@v1
-#        with:
-#          github_token: ${{ secrets.github_token }}
-#          eslint: true
-#          eslint_dir: packages/ecomm
+#        working-directory: packages/ecomm
+#        run: yarn lint
+
+      - name: Run linters
+        uses: samuelmeuli/lint-action@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          eslint: true
+          eslint_dir: packages/ecomm
 
       - name: Test
         working-directory: packages/ecomm
