@@ -4,26 +4,20 @@
         "es2021": true
     },
     "parser": "@typescript-eslint/parser",
-
     "plugins": [
         "react",
         "@typescript-eslint"
     ],
-    extends: ['eslint:recommended'],
-    "overrides": [
-        {
-            files: ['*.ts', '*.tsx'],
-            "extends": [
-                "plugin:react/recommended",
-                "plugin:@typescript-eslint/recommended",
-            ],
-            "parserOptions": {
-                "project": ['./tsconfig.json'],
-                "ecmaVersion": "latest",
-                "sourceType": "module"
-            }
-        }
+    extends: ['eslint:recommended', "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended"
     ],
+    "overrides": [
+    ],
+    "parserOptions": {
+        "project": ['./tsconfig.json'],
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
     "ignorePatterns": ["jest.config.js", "next.config.js"],
     "rules": {
         "react/react-in-jsx-scope": "off",
