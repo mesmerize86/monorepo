@@ -30,7 +30,11 @@
             "parserOptions": {
                 "ecmaVersion": 2018
             },
-            "extends": ["eslint:recommended", "prettier"]
+            "extends": [
+                "eslint:recommended",
+                "prettier"
+            ]
+        }
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
