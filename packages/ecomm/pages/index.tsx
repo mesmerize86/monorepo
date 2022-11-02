@@ -5,6 +5,11 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
+    const arr = [4, 3, 2, 1];
+
+    for (let value of arr) {
+        console.log(value);
+    }
   return (
     <div className={styles.container}>
       <Head>
