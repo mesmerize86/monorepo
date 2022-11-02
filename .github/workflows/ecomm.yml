@@ -39,17 +39,28 @@ jobs:
           prettier: true
           prettier_dir: packages/ecomm
 
-      - name: Test
-        working-directory: packages/ecomm
-        run: yarn run coverage
-
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - uses: ArtiomTr/jest-coverage-report-action@v2
+        id: coverage
         with:
-          projectBaseDir: packages/ecomm
+          output: report-markdown
+      - uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          working-directory: packages/ecomm
+          coverage-file: ./coverage/report.json
+          base-coverage-file: ./coverage/master/report.json
+          message: ${{ steps.coverage.outputs.report }}
+
+#      - name: Test
+#        working-directory: packages/ecomm
+#        run: yarn run coverage
+
+#      - name: SonarCloud Scan
+#        uses: SonarSource/sonarcloud-github-action@master
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#        with:
+#          projectBaseDir: packages/ecomm
       
 
 #  sonarcloudScan2:
