@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     const arr = [4, 3, 2, 1];
 
     for (let value of arr) {
-        console.log('value', value);
+        console.log( value);
     }
   return (
     <div className={styles.container}>
