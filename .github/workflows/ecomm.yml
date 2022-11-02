@@ -46,7 +46,6 @@ jobs:
           output: report-markdown
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
-          working-directory: packages/ecomm
           coverage-file: ./coverage/report.json
           base-coverage-file: ./coverage/master/report.json
           message: ${{ steps.coverage.outputs.report }}
