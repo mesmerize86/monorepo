@@ -27,9 +27,9 @@ jobs:
         working-directory: packages/ecomm
         run: yarn install
 
-      - name: Run linters
-        working-directory: packages/ecomm
-        run:  yarn lint
+#      - name: Run linters
+#        working-directory: packages/ecomm
+#        run:  yarn lint
 
 #      - name: Run linters
 #        uses: wearerequired/lint-action@v2
@@ -39,9 +39,9 @@ jobs:
 #          prettier: true
 #          prettier_dir: packages/ecomm
 
-      - name: Test
-        working-directory: packages/ecomm
-        run: yarn run coverage
+#      - name: Test
+#        working-directory: packages/ecomm
+#        run: yarn run coverage
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
