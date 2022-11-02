@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
     const test = '';
-    const test = '';
+    const test = 'abcd';
   return (
     <div className={styles.container}>
       <Head>
