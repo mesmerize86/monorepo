@@ -39,12 +39,12 @@ jobs:
 #          prettier: true
 #          prettier_dir: packages/ecomm
 
-      - uses: ArtiomTr/jest-coverage-report-action@v3
+      - uses: ArtiomTr/jest-coverage-report-action@v2
         id: coverage
         with:
           working-directory: packages/ecomm
           output: report-markdown
-      - uses: marocchino/sticky-pull-request-comment@v3
+      - uses: marocchino/sticky-pull-request-comment@v2
         with:
           working-directory: packages/ecomm
           coverage-file: ./coverage/report.json
