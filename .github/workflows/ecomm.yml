@@ -43,7 +43,6 @@ jobs:
         id: coverage
         with:
           working-directory: packages/ecomm
-          coverage-file: ./coverage/coverage-final.json
           output: report-markdown
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
