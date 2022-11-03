@@ -49,11 +49,9 @@ jobs:
         with:
           working-directory: packages/ecomm
           test-script: yarn coverage
-          annotations: ${{ github.event.pull_request.head.repo.full_name == github.event.repository.name && 'coverage' || 'none' }}
-          coverage-file: ./coverage/coverage-final.json
-          base-coverage-file: ./coverage/coverage-final.json
+          annotations: ${{ github.event.pull_request.head.repo.full_name == github.event.repository.name && 'coverage' || 'none' }
           skip-step: all
-          output: comment, report-markdown
+          output: report-markdown
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
           message: ${{ steps.coverage.outputs.report }}
