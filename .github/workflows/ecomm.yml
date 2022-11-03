@@ -11,12 +11,13 @@ on:
         - 'packages/ecomm/**'
         - '.github/workflows/**'
     types: [opened, synchronize, reopened]
-permissions:
-  contents: read
-  checks:   write
 jobs:
   sonarcloudScan1:
     name: SonarCloudScan1
+    permissions:
+      checks: write
+      pull-requests: write
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -27,29 +28,45 @@ jobs:
         working-directory: packages/ecomm
         run: yarn install
 
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
 #      - name: Run linters
 #        working-directory: packages/ecomm
 #        run:  yarn add -g eslint
 
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          eslint_dir: packages/ecomm
-          prettier: true
-          prettier_dir: packages/ecomm
+#      - name: Run linters
+#        uses: wearerequired/lint-action@v2
+#        with:
+#          eslint: true
+#          eslint_dir: packages/ecomm
+#          prettier: true
+#          prettier_dir: packages/ecomm
 
-      - name: Test
-        working-directory: packages/ecomm
-        run: yarn run coverage
-
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - uses: ArtiomTr/jest-coverage-report-action@v2
+        id: coverage
         with:
-          projectBaseDir: packages/ecomm
+          working-directory: packages/ecomm
+          coverage-file: ./coverage/report.json
+          base-coverage-file: ./coverage/master/report.json
+          output: report-markdown
+      - uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          message: ${{ steps.coverage.outputs.report }}
+
+#      - name: Test
+#        working-directory: packages/ecomm
+#        run: yarn run coverage
+
+#      - name: SonarCloud Scan
+#        uses: SonarSource/sonarcloud-github-action@master
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#        with:
+#          projectBaseDir: packages/ecomm
       
 
 #  sonarcloudScan2:
