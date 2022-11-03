@@ -44,18 +44,11 @@ jobs:
 #          prettier: true
 #          prettier_dir: packages/ecomm
 
-
-      - run: echo ${{ github.workspace }}
       - uses: ArtiomTr/jest-coverage-report-action@v2
         id: coverage
         with:
-          working-directory: ${{ github.workspace }}/packages/ecomm
-          package-manager: yarn
-          test-script: yarn coverage
-          skip-step: all
+          working-directory: packages/ecomm
           output: report-markdown
-          coverage-file: ./coverage/report.json
-          base-coverage-file: ./coverage/report.json
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
           message: ${{ steps.coverage.outputs.report }}
