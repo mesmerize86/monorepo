@@ -44,7 +44,7 @@ jobs:
         with:
           working-directory: packages/ecomm
           test-script: yarn lint
-          output: report-markdown
+          coverage-file: ./coverage/coverage-final.json
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
           message: ${{ steps.coverage.outputs.report }}
