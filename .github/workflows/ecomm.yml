@@ -49,8 +49,8 @@ jobs:
         with:
           working-directory: packages/ecomm
           test-script: yarn coverage,
-          coverage-file: report.json
-          base-coverage-file: report.json
+          coverage-file: ./coverage/coverage-final.json
+          base-coverage-file: ./coverage/coverage-final.json
           skip-step: all
           output: comment, report-markdown
       - uses: marocchino/sticky-pull-request-comment@v2
