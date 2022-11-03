@@ -11,12 +11,13 @@ on:
         - 'packages/ecomm/**'
         - '.github/workflows/**'
     types: [opened, synchronize, reopened]
-permissions:
-  contents: read
-  checks:   write
 jobs:
   sonarcloudScan1:
     name: SonarCloudScan1
+    permissions:
+      checks: write
+      pull-requests: write
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -48,6 +49,8 @@ jobs:
         id: coverage
         with:
           working-directory: packages/ecomm
+          coverage-file: ./coverage/report.json
+          base-coverage-file: ./coverage/master/report.json
           output: report-markdown
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
