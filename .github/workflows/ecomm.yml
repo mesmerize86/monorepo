@@ -48,8 +48,11 @@ jobs:
         id: coverage
         with:
           working-directory: packages/ecomm
-          test-script: yarn coverage
-          coverage-file: ./coverage/coverage-final.json
+          test-script: yarn coverage,
+          coverage-file: coverage/coverage-final.json
+          base-coverage-file: coverage/report.json
+          skip-step: all
+          output: comment, report-markdown
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
           message: ${{ steps.coverage.outputs.report }}
