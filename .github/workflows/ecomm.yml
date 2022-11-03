@@ -23,9 +23,14 @@ jobs:
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
-#      - name: Install Dependencies
-#        working-directory: packages/ecomm
-#        run: yarn install
+      - name: Install Dependencies
+        working-directory: packages/ecomm
+        run: yarn install
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
 #      - name: Run linters
 #        working-directory: packages/ecomm
