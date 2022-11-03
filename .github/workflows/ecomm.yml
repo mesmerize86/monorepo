@@ -43,7 +43,7 @@ jobs:
         id: coverage
         with:
           working-directory: packages/ecomm
-          test-script: yarn lint
+          test-script: yarn coverage
           coverage-file: ./coverage/coverage-final.json
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
