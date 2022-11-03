@@ -23,10 +23,10 @@ const customJestConfig = {
     },
     testEnvironment: 'jest-environment-jsdom',
     collectCoverageFrom: [
-        './pages/**/*.{ts,tsx}',
-        '!./pages/**/*.test.{ts, tsx}',
-        '!./pages/_app.tsx',
-        '!./pages/index.tsx',
+        'pages/**/*.{ts,tsx}',
+        '!pages/**/*.test.{ts, tsx}',
+        '!pages/_app.tsx',
+        '!pages/index.tsx',
     ],
     collectCoverage: true,
     coverageThreshold: {
