@@ -48,7 +48,8 @@ jobs:
         id: coverage
         with:
           working-directory: packages/ecomm
-          test-script: yarn coverage,
+          test-script: yarn coverage
+          annotations: ${{ github.event.pull_request.head.repo.full_name == github.event.repository.name && 'coverage' || 'none' }}
           coverage-file: ./coverage/coverage-final.json
           base-coverage-file: ./coverage/coverage-final.json
           skip-step: all
