@@ -43,6 +43,8 @@ jobs:
 #          eslint_dir: packages/ecomm
 #          prettier: true
 #          prettier_dir: packages/ecomm
+
+
       - run: echo ${{ github.workspace }}
       - uses: ArtiomTr/jest-coverage-report-action@v2
         id: coverage
@@ -53,7 +55,7 @@ jobs:
           skip-step: all
           output: report-markdown
           coverage-file: ./coverage/coverage-final.json
-          base-coverage-file: ./coverage/coverage-final.json
+          base-coverage-file: ./coverage/report.json
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
           message: ${{ steps.coverage.outputs.report }}
