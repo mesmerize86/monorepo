@@ -43,6 +43,7 @@ jobs:
         id: coverage
         with:
           working-directory: packages/ecomm
+          test-script: yarn lint
           output: report-markdown
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
