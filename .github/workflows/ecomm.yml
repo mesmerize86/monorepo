@@ -52,6 +52,7 @@ jobs:
           test-script: yarn coverage
           skip-step: all
           output: report-markdown
+          base-coverage-file: ./coverage/coverage-final.json
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
           message: ${{ steps.coverage.outputs.report }}
