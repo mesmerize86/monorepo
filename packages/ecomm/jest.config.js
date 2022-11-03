@@ -22,19 +22,16 @@ const customJestConfig = {
         '^@/pages/(.*)$': '<rootDir>/pages/$1',
     },
     testEnvironment: 'jest-environment-jsdom',
-    collectCoverageFrom: [
-        'pages/**/*.{ts,tsx}',
-        '!pages/**/*.test.{ts, tsx}',
-        '!pages/_app.tsx',
-        '!pages/index.tsx',
-    ],
+    // collectCoverageFrom: [
+    //     'pages/**/*.{ts,tsx}',
+    //     '!pages/**/*.test.{ts, tsx}',
+    //     '!pages/_app.tsx',
+    //     '!pages/index.tsx',
+    // ],
     collectCoverage: true,
     coverageThreshold: {
         global: {
-            branches: 80,
-            functions: 80,
-            lines: 80,
-            statements: -10,
+            branches: 80
         },
     },
 }

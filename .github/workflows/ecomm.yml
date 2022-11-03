@@ -47,7 +47,7 @@ jobs:
       - uses: ArtiomTr/jest-coverage-report-action@v2
         id: coverage
         with:
-          working-directory: packages/ecomm
+          working-directory: ${{ github.workspace }}/packages/ecomm
           test-script: yarn coverage
           skip-step: all
           output: report-markdown
