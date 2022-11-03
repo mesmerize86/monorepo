@@ -48,6 +48,7 @@ jobs:
         id: coverage
         with:
           working-directory: ${{ github.workspace }}/packages/ecomm
+          package-manager: yarn
           test-script: yarn coverage
           skip-step: all
           output: report-markdown
