@@ -2,13 +2,13 @@ name: Ecomm SonarCloud
 on:
   push:
     paths:
-      - 'packages/ecomm/**'
+      - 'app/ecomm/**'
       - '.github/workflows/**'
     branches:
       - master
   pull_request:
     paths:
-        - 'packages/ecomm/**'
+        - 'app/ecomm/**'
         - '.github/workflows/**'
     types: [opened, synchronize, reopened]
 permissions:
@@ -35,12 +35,12 @@ jobs:
         uses: wearerequired/lint-action@v2
         with:
           eslint: true
-          eslint_dir: packages/ecomm
+          eslint_dir: app/ecomm
           prettier: true
-          prettier_dir: packages/ecomm
+          prettier_dir: app/ecomm
 
       - name: Test
-        working-directory: packages/ecomm
+        working-directory: app/ecomm
         run: yarn run coverage
 
       - name: SonarCloud Scan

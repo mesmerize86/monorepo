@@ -1,3 +1,1 @@
-const isWds = require('is-wds');
-
-console.log('isWDS ==> ', isWds('WDS'))
+export const isWds = require('is-wds');

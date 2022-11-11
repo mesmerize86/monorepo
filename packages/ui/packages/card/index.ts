@@ -1,5 +1,3 @@
-function isWDS () {
+export function isWDS () {
     return 'wds';
 }
-
-module.exports = isWDS;
